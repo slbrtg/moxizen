@@ -1,0 +1,2 @@
+class AgentActivityController < ApplicationController
+end
