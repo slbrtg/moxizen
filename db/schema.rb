@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180612235109) do
   enable_extension "plpgsql"
 
   create_table "agent_activities", force: :cascade do |t|
-    t.integer "average_talk_time"
+    t.bigint "agent_id"
     t.integer "calls_accepted"
     t.integer "calls_denied"
     t.integer "calls_missed"
@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 20180612235109) do
     t.integer "total_call_duration"
     t.integer "total_talk_time"
     t.integer "total_wrap_up_time"
-    t.integer "average_wrap_up_time"
     t.integer "accepted_transfers"
+    t.integer "started_transfers"
     t.integer "calls_put_on_hold"
-    t.integer "average_hold_time"
     t.integer "total_hold_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 20180612235109) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
-    t.string "agent_id"
     t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

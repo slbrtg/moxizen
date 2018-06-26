@@ -1,4 +1,4 @@
 class Agent < ApplicationRecord
-  has_many :agent_activities
-  validates :agent_id, uniqueness: true
+  validates :id, uniqueness: true
+  validates :name, :id, :avatar_url, presence: true
 end
