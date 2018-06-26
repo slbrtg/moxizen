@@ -16,5 +16,4 @@ class Talk < ApplicationRecord
   def agents_activity
     self.class.get('/agents_activity.json', basic_auth: @auth)
   end
-
 end
