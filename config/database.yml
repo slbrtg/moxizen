@@ -1,9 +1,5 @@
-# SQLite version 3.x
-#   gem install postgresql
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'postgresql'
-#
+#P O S T G R E S
+
 development:
   adapter: postgresql
   encoding: unicode
@@ -11,9 +7,6 @@ development:
   pool: 5
   username: postgres
   password: pg
-  
-
-
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

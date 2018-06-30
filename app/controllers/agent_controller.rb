@@ -1,13 +1,10 @@
 class AgentController < ApplicationController
   # talk inherited from Application Controller, returns Talk.new
 
+  # Used to save and update all agents
   def save_agents
-    talk.agents_activity['agents_activity'].each do |agent|
-      new_agent = Agent.new
-      new_agent.name = agent['name']
-      new_agent.avatar_url = agent['avatar_url']
-      new_agent.id = agent['agent_id']
-      new_agent.save
-    end
+    Agent.save_agents
+  rescue
+    puts 'failed to save agents'
   end
 end

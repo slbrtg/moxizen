@@ -1,0 +1,2 @@
+class AccountActivity < ApplicationRecord
+end

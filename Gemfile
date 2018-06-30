@@ -45,3 +45,6 @@ gem 'httparty'
 
 # PG
 gem 'pg'
+
+# Whenever
+gem 'whenever'
