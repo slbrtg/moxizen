@@ -10,17 +10,9 @@ Rails.application.routes.draw do
   get '/api/activity/save_activity' => 'agent_activity#save_activity'
 
   # The Meat and Potatoes, retrieves the stats by day, week, month, and year
-  get '/api/activity/one_day_all' => 'agent_activity#one_day_all'
-  get '/api/activity/one_week_all' => 'agent_activity#one_week_all'
-  get '/api/activity/one_month_all' => 'agent_activity#one_month_all'
-  get '/api/activity/one_year_all' => 'agent_activity#one_year_all'
+  get '/api/activity/agent_activity' => 'agent_activity#agent_activity'
+  get '/api/activity/all_activity' => 'agent_activity#all_activity'
 
-  get '/api/activity/one_day' => 'agent_activity#one_day'
-  get '/api/activity/seven_days' => 'agent_activity#seven_days'
-  get '/api/activity/thirty_days' => 'agent_activity#thirty_days'
-  get '/api/activity/sixty_days' => 'agent_activity#sixty_days'
-  get '/api/activity/ninety_days' => 'agent_activity#ninety_days'
-  get '/api/activity/one_year' => 'agent_activity#one_year'
 
   # Saves the account's daily activity
   get '/api/account_activity/save_account_activity' => 'account_activity#save_account_activity'
