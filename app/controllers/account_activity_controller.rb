@@ -6,4 +6,14 @@ class AccountActivityController < ApplicationController
   rescue StandardError => e
     puts e
   end
+
+  # Method that returns all agent data
+  def account_activity
+    activity_query = 'DATE(created_at) >= ?'
+    req_days = Date.today-request.headers['HTTP_REQ_DAYS'].to_i
+
+    render json: AccountActivity.where(activity_query, req_days)
+  rescue StandardError => e
+    puts e
+  end
 end

@@ -14,20 +14,11 @@ class AgentActivityController < ApplicationController
     req_days = Date.today-request.headers['HTTP_REQ_DAYS'].to_i
     agent_id = Agent.where('name = ?', request.headers['HTTP_AGENT_NAME'])[0].id
 
-    puts AgentActivity.where(activity_query, req_days, agent_id).length
+    render json: AgentActivity.where(activity_query, req_days, agent_id)
   rescue StandardError => e
     puts e
   end
 
-    # Method that returns all agent data
-    def all_activity
-      activity_query = 'DATE(created_at) >= ?'
-      req_days = Date.today-request.headers['HTTP_REQ_DAYS'].to_i
-  
-      puts AgentActivity.where(activity_query, req_days).length
-    rescue StandardError => e
-      puts e
-    end
 
 
 end
